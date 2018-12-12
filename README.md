@@ -1,9 +1,9 @@
 # frida-trick
 My own collection of Frida script and tricks
 
-## Scripts summary
+## 1. Scripts summary
 
-### file_access.js
+### 1.a file_access.js
 Observe file system accesses by hooking some java.io.File* classes and methods, libc open/read functions and try to resolve association between file descriptor and path. Optionally, it can dumps the data. The first block contains the configuration.
 ```
 var CONFIG = {
@@ -22,13 +22,16 @@ var CONFIG = {
 }
 ```
 
-## Shell tricks
+## 2. Tricks
 
+### 2.a Generic tricks
 Attach to a running process by name.
 ```
 frida -U -p $(frida-ps -U | grep <appname> | tail -n 1 | cut -b1-5) -l <your_scripts>
 ```
 
+
+### 2.b Java tricks
 Print the stack trace if called from a Java Hook (see *scripts/file_access.js* script for example)
 ```
 var JavaThread = Java.use("java.lang.Thread");
