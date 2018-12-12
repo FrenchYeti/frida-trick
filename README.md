@@ -44,3 +44,16 @@ function printStackTrace(){
     }
 }
 ```
+
+### 2.c Native tricks
+
+### 2.d TEE tricks
+
+To observe shared buffer, set the folder *scripts/qsee* as working directory and run frida-trace like below.   
+```
+cd ./scripts/qsee
+frida-trace -U -p $(frida-ps -U | grep system_server | cut -b1-5) -I "libQSEEComAPI.so"
+```
+
+
+
