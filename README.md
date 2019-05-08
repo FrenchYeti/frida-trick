@@ -1,9 +1,9 @@
 # frida-trick
-My own collection of Frida script and tricks
+My own collection of Frida script and tricks (Java / Native / TEE)
 
 ## 1. Scripts summary
 
-### 1.a file_access.js
+### 1.a file_access.js ( do file descriptor lookup)
 Observe file system accesses by hooking some java.io.File* classes and methods, libc open/read functions and try to resolve association between file descriptor and path. Optionally, it can dumps the data. The first block contains the configuration.
 ```
 var CONFIG = {
