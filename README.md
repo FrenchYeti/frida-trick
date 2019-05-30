@@ -4,6 +4,7 @@ My own collection of Frida script and tricks (Java / Native / TEE)
 ## 1. Scripts summary
 
 ### 1.a file_access.js ( do file descriptor lookup)
+File : [https://raw.githubusercontent.com/FrenchYeti/frida-trick/master/scripts/file_access.js](https://raw.githubusercontent.com/FrenchYeti/frida-trick/master/scripts/file_access.js)
 Observe file system accesses by hooking some java.io.File* classes and methods, libc open/read functions and try to resolve association between file descriptor and path. Optionally, it can dumps the data. The first block contains the configuration.
 ```
 var CONFIG = {
@@ -45,9 +46,8 @@ function printStackTrace(){
 }
 ```
 
-### 2.c Native tricks
 
-### 2.d TEE tricks
+### 2.c TEE tricks
 
 To observe shared buffer, set the folder *scripts/qsee* as working directory and run frida-trace like below.   
 ```
