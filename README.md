@@ -5,19 +5,27 @@ My own collection of Frida script and tricks (Java / Native / TEE)
 
 ### 1.a file_access.js ( do file descriptor lookup)
 File : [https://raw.githubusercontent.com/FrenchYeti/frida-trick/master/scripts/file_access.js](https://raw.githubusercontent.com/FrenchYeti/frida-trick/master/scripts/file_access.js)
+
 Observe file system accesses by hooking some java.io.File* classes and methods, libc open/read functions and try to resolve association between file descriptor and path. Optionally, it can dumps the data. The first block contains the configuration.
+
+The following code extract explains how configure the script above.
 ```
 var CONFIG = {
     // if TRUE enable data dump 
     printEnable: true,
+    
     // if TRUE enable libc.so open/read/write hook
     printLibc: false,
+    
     // if TRUE print the stack trace for each hook
     printStackTrace: false,
+    
     // to filter the file path whose data want to be dumped in ASCII 
     dump_ascii_If_Path_contains: [".log", ".xml", ".prop"],
+    
     // to filter the file path whose data want to be NOT dumped in hexdump (useful for big chunk and excessive reads) 
     dump_hex_If_Path_NOT_contains: [".png", "/proc/self/task", "/system/lib", "base.apk", "cacert"],
+    
     // to filter the file path whose data want to be NOT dumped fron libc read/write (useful for big chunk and excessive reads) 
     dump_raw_If_Path_NOT_contains: [".png", "/proc/self/task", "/system/lib", "base.apk", "cacert"]
 }
