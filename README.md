@@ -31,6 +31,12 @@ var CONFIG = {
 }
 ```
 
+
+### 1.b log_to_file.py 
+File : [https://raw.githubusercontent.com/FrenchYeti/frida-trick/master/scripts/log_to_file.py ](https://raw.githubusercontent.com/FrenchYeti/frida-trick/master/scripts/log_to_file.py )
+
+It is an example of "how to log hook output into a file on host computer". You should edit file to adapt it to your case.  
+
 ## 2. Tricks
 
 ### 2.a Generic tricks
